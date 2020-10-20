@@ -15,6 +15,7 @@
     </style>
 
     <style name="Theme.MadLevel5Task2.NoActionBar">
+        <item name="android:windowBackground">@color/colorBackgroundDark</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

@@ -1,14 +1,13 @@
-package com.example.madlevel5task2
+package com.example.madlevel5task2.Ui
 
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import com.example.madlevel5task2.R
 import com.example.madlevel5task2.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -27,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         fab.setOnClickListener {
             navController.navigate(
-                    R.id.action_gameBacklogFragment_to_addGameFragment
+                R.id.action_gameBacklogFragment_to_addGameFragment
             )
         }
 
