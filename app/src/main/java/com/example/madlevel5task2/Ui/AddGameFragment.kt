@@ -1,10 +1,8 @@
 package com.example.madlevel5task2.Ui
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.Menu
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.core.view.forEachIndexed
 import androidx.fragment.app.Fragment
 import com.example.madlevel5task2.R
 import com.example.madlevel5task2.databinding.FragmentAddGameBinding
@@ -35,10 +33,20 @@ class AddGameFragment : Fragment() {
 
     }
 
-    // hides the delete button in the toolbar
-    override fun onPrepareOptionsMenu(menu: Menu) {
-        menu.findItem(R.id.delete).isVisible = false
-        super.onPrepareOptionsMenu(menu)
+//    // hides the delete button in the toolbar
+//    override fun onPrepareOptionsMenu(menu: Menu) {
+//        menu.findItem(R.id.delete).isVisible = false
+//        super.onPrepareOptionsMenu(menu)
+//    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        return when (item.itemId) {
+
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
 

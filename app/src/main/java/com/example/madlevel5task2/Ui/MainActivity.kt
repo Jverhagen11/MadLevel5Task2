@@ -5,6 +5,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.widget.Toolbar
+import androidx.core.view.get
+import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.example.madlevel5task2.R
@@ -15,6 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
+    private var activeMenu = R.menu.menu_main
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,11 +38,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun fabToggler() {
+
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id in arrayOf(R.id.addGameFragment)) {
                 fab.hide()
                 save.show()
-
                 //back arrow button to navigate back to backlog
                 supportActionBar!!.setDisplayHomeAsUpEnabled(true)
                 supportActionBar!!.setDisplayShowHomeEnabled(false)
