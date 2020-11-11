@@ -7,8 +7,10 @@ import android.view.*
 import androidx.annotation.RequiresApi
 import androidx.core.view.forEachIndexed
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.madlevel5task2.Models.Game
 import com.example.madlevel5task2.R
+import com.example.madlevel5task2.Viewmodel.GameViewmodel
 import com.example.madlevel5task2.databinding.FragmentAddGameBinding
 import com.google.android.material.snackbar.Snackbar
 import java.time.LocalDate
@@ -21,6 +23,7 @@ class AddGameFragment : Fragment() {
 
     private lateinit var binding: FragmentAddGameBinding
 
+    private val gameViewModel: GameViewmodel by viewModels()
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -68,8 +71,22 @@ class AddGameFragment : Fragment() {
             return
         }
 
+        try {
+            gameViewModel.addBacklogGame(
+                    Game(
+                            title,
+                            platform,
+                            LocalDate.of(year, month, day)
+                    )
+            )
+            startActivity(Intent(activity, MainActivity::class.java))
+        } catch (e: Exception) {
+            Snackbar.make(requireView(), "Invalid date try again", Snackbar.LENGTH_SHORT).show()
+        }
+
 
     }
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle action bar item clicks here. The action bar will
