@@ -18,4 +18,6 @@
     <string name="year">Year</string>
     <string name="add_item_fab">Add</string>
     <string name="add_game">Add Game</string>
+    <string name="removed_game">remove game</string>
+    <string name="undo">undo</string>
 </resources>

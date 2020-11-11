@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         navController = findNavController(R.id.nav_host_fragment)
 
-        fab.setOnClickListener {
+        fab1.setOnClickListener {
             navController.navigate(
                 R.id.action_gameBacklogFragment_to_addGameFragment
             )
@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id in arrayOf(R.id.addGameFragment)) {
-                fab.hide()
+                fab1.hide()
                 //back arrow button to navigate back to backlog
                 supportActionBar!!.setDisplayHomeAsUpEnabled(true)
                 supportActionBar!!.setDisplayShowHomeEnabled(false)
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
             } else {
-                fab.show()
+
             }
         }
     }
