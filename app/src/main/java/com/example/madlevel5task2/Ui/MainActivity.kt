@@ -42,7 +42,6 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id in arrayOf(R.id.addGameFragment)) {
                 fab.hide()
-                save.show()
                 //back arrow button to navigate back to backlog
                 supportActionBar!!.setDisplayHomeAsUpEnabled(true)
                 supportActionBar!!.setDisplayShowHomeEnabled(false)
@@ -53,7 +52,6 @@ class MainActivity : AppCompatActivity() {
 
             } else {
                 fab.show()
-                save.hide()
             }
         }
     }

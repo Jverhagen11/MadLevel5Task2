@@ -7,137 +7,135 @@
     tools:context=".Ui.AddGameFragment">
 
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_marginTop="20dp"
-        android:id="@+id/card"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/card_background"
+        android:paddingBottom="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilTitle"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
 
-     <LinearLayout
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:orientation="vertical">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTitle"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#00FFFFFF"
+                android:hint="@string/title" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-         <com.google.android.material.textfield.TextInputLayout
-             android:id="@+id/tiTitle"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:padding="8dp"
-             app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintStart_toStartOf="parent"
-             app:layout_constraintTop_toBottomOf="@+id/tilNoteTitle">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPlatform"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilTitle"
+          >
 
-             <com.google.android.material.textfield.TextInputEditText
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 android:background="@color/white"
-                 android:hint="Title"
-                 android:textSize="18sp" />
-         </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPlatform"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#00FFFFFF"
+                android:hint="@string/platform" />
+        </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilDay"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/tilMonth"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilPlatform"
+            >
 
-         <com.google.android.material.textfield.TextInputLayout
-             android:id="@+id/tiPlatform"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:padding="8dp"
-             app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintStart_toStartOf="parent"
-             app:layout_constraintTop_toBottomOf="@+id/tilNoteTitle">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="#00FFFFFF"
+                android:hint="@string/day"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-             <com.google.android.material.textfield.TextInputEditText
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 android:background="@color/white"
-                 android:hint="Title"
-                 android:textSize="18sp" />
-         </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilMonth"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="4dp"
+            app:layout_constraintEnd_toStartOf="@id/tilYear"
+            app:layout_constraintStart_toEndOf="@+id/tilDay"
+            app:layout_constraintTop_toBottomOf="@id/tilPlatform"
+            >
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etMonth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="#00FFFFFF"
+                android:hint="@string/month"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-         <LinearLayout
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_marginBottom="10dp"
-             android:padding="10dp"
-             android:orientation="horizontal">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilYear"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tilMonth"
+            app:layout_constraintTop_toBottomOf="@id/tilPlatform"
+           >
 
-
-             <com.google.android.material.textfield.TextInputLayout
-                 android:id="@+id/tiDay"
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 android:layout_weight="2"
-                 app:layout_constraintEnd_toEndOf="parent"
-                 app:layout_constraintStart_toStartOf="parent"
-                 app:layout_constraintTop_toBottomOf="@+id/tilNoteTitle">
-
-                 <com.google.android.material.textfield.TextInputEditText
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:background="@color/white"
-                     android:hint="Day"
-                     android:textSize="18sp" />
-             </com.google.android.material.textfield.TextInputLayout>
-
-             <com.google.android.material.textfield.TextInputLayout
-                 android:id="@+id/tiMonth"
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 android:layout_weight="2"
-                 app:layout_constraintEnd_toEndOf="parent"
-                 app:layout_constraintStart_toStartOf="parent"
-                 app:layout_constraintTop_toBottomOf="@+id/tilNoteTitle">
-
-                 <com.google.android.material.textfield.TextInputEditText
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:background="@color/white"
-                     android:hint="Month"
-                     android:textSize="18sp" />
-             </com.google.android.material.textfield.TextInputLayout>
-
-             <com.google.android.material.textfield.TextInputLayout
-                 android:id="@+id/tiYear"
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 android:layout_weight="2"
-                 app:layout_constraintEnd_toEndOf="parent"
-                 app:layout_constraintStart_toStartOf="parent"
-                 app:layout_constraintTop_toBottomOf="@+id/tilNoteTitle">
-
-                 <com.google.android.material.textfield.TextInputEditText
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:background="@color/white"
-                     android:hint="Year"
-                     android:textSize="18sp" />
-             </com.google.android.material.textfield.TextInputLayout>
-
-
-
-         </LinearLayout>
-
-
-     </LinearLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etYear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="#00FFFFFF"
+                android:hint="@string/year"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
-
-
-
-
-
-    </com.google.android.material.card.MaterialCardView>
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:backgroundTint="@color/colorPrimary"
+        android:contentDescription="@string/add_item_fab"
+        android:tint="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_baseline_save_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
